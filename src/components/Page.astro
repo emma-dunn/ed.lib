@@ -1,0 +1,16 @@
+---
+import Header from "./Header.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: classes } = Astro.props;
+---
+
+<main class:list={["mx-auto w-fit max-w-7xl p-6", classes]}>
+  <Header />
+  <div class="bg-base-100 p-5 rounded-b-2xl rounded-r-2xl">
+    <slot />
+  </div>
+</main>

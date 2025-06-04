@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Page from "../components/Page.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -13,6 +14,7 @@ const {
   date: pubDate,
   updatedDate,
   heroImage,
+  heroAlt,
 } = Astro.props;
 ---
 
@@ -20,40 +22,6 @@ const {
   <head>
     <BaseHead title={title} description={description} />
     <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
       .last-updated-on {
         font-style: italic;
       }
@@ -61,35 +29,35 @@ const {
   </head>
 
   <body>
-    <Header />
-    <main>
-      <article>
-        <div class="hero-image">
+    <Page>
+      <div class="text-center">
+        <div class="py-2">
+          <FormattedDate date={pubDate} />
           {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
+            updatedDate && (
+              <div class="last-updated-on">
+                Last updated on <FormattedDate date={updatedDate} />
+              </div>
             )
           }
         </div>
-        <div class="prose bg-base-100 rounded-2xl">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
+        <h1 class="max-w-[90%] mx-auto">
+          {title}
+        </h1>
+        <hr />
+      </div>
+      {
+        heroImage && (
+          <div class="p-4">
+            <img class="aspect-video w-full" src={heroImage} alt={heroAlt} />
           </div>
-          <slot />
-        </div>
-      </article>
-    </main>
+        )
+      }
+      <div class="p-6 space-y-6">
+        <slot />
+      </div>
+    </Page>
+
     <Footer />
   </body>
 </html>

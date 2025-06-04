@@ -11,14 +11,10 @@
  */
 @theme {
   --font-fig: "Figtree", "sans-serif";
-  --color-accent: #2337ff;
-  /* --color-base-100: #f0f0f0;
-  --color-base-200: #dbdbdb;
-  --color-base-300: #c5c5c5;
-  --color-base-content: oklch(19.162% 0 0); */
 
   --breakpoint-720: 720px;
   --spacing-720: 720px;
+  --spacing-main: calc(100% - 2em);
 }
 @layer base {
   body {
@@ -27,9 +23,6 @@
            text-left wrap-break-word text-wrap;
   }
 
-  main {
-    @apply w-720 max-w-[calc(100%-2em)] mx-auto p-6;
-  }
   h1,
   h2,
   h3,
@@ -40,36 +33,32 @@
     color: rgb(var(--black));
     line-height: 1.2;
   }
-  h1 {
-    font-size: 3.052em;
-  }
-  h2 {
-    font-size: 2.441em;
-  }
-  h3 {
-    font-size: 1.953em;
-  }
-  h4 {
-    font-size: 1.563em;
-  }
-  h5 {
-    font-size: 1.25em;
-  }
   strong,
   b {
     font-weight: 700;
   }
 
-  a {
-    @apply text-accent hover:text-red-500;
+  h1 {
+    @apply font-bold text-5xl leading-14;
+  }
+  h2 {
+    @apply font-semibold text-4xl leading-12;
+  }
+  h3 {
+    @apply font-semibold text-3xl;
+  }
+  h4 {
+    @apply text-2xl font-bold tracking-tight;
+  }
+  h5,
+  h6 {
+    @apply font-medium;
   }
 
-  p {
-    margin-bottom: 1em;
+  a {
+    @apply text-success hover:brightness-75 hover:underline underline-offset-4;
   }
-  .prose p {
-    margin-bottom: 2em;
-  }
+
   textarea {
     width: 100%;
     font-size: 16px;
@@ -86,9 +75,10 @@
     border-radius: 8px;
   }
   code {
-    padding: 2px 5px;
-    background-color: rgb(var(--gray-light));
-    border-radius: 2px;
+    @apply px-1.5 py-[1px] rounded-sm bg-base-300 text-base-content text-nowrap;
+  }
+  ul {
+    @apply list-disc pl-10;
   }
   pre {
     padding: 1.5em;
@@ -115,6 +105,10 @@
       padding: 1em;
     }
   }
+}
+
+.home {
+  @apply w-720 max-w-main mx-auto;
 }
 
 .sr-only {
