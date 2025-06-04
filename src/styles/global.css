@@ -16,6 +16,9 @@
   --color-base-200: #dbdbdb;
   --color-base-300: #c5c5c5;
   --color-base-content: oklch(19.162% 0 0); */
+
+  --breakpoint-720: 720px;
+  --spacing-720: 720px;
 }
 @layer base {
   body {
@@ -25,10 +28,7 @@
   }
 
   main {
-    width: 720px;
-    max-width: calc(100% - 2em);
-    margin: auto;
-    padding: 3em 1em;
+    @apply w-720 max-w-[calc(100%-2em)] mx-auto p-6;
   }
   h1,
   h2,
