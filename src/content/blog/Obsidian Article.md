@@ -5,7 +5,7 @@ description: todo
 author:
   - Me
 date: 2025-05-30
-heroImage: /books-1.jpg
+heroImage: /blog/books-1.jpg
 heroAlt: A bookshelf filled with lots of books and papers, some of them divided into shelf organizers. One book spine in the middle reads Let the People Know.
 tags:
   - obsidian
@@ -19,7 +19,7 @@ While working on my website, I realized I needed a better way to wrangle ideas, 
 
 ## What Makes Obsidian Different?
 
-<img src="obsidian_file_navigator.png" alt="Obsidian interface, including my file navigation menu open on the left and a document with several properties open to the right." />
+![Obsidian interface, including my file navigation menu open on the left and a document with several properties open to the right.](/blog/obsidian_file_navigator-1.png)
 
 The Obsidian interface is super usable. (The Obsidian interface, including my file navigation menu open on the left and a document with several properties open to the right.)
 
@@ -29,7 +29,7 @@ You can **link notes** together using simple brackets: `[[Note Title]]`. Doing s
 
 Even cooler: when you click into **Graph View**, you can actually see those connections in a visual web. Every note is a dot, and every link you’ve created becomes a line. It’s beautiful to look at—and incredibly helpful for understanding how your thoughts relate to each other. It can even help you discover which areas you should explore next.
 
-<img src="graph.png" alt="Obsidian interface, including my file navigation menu open on the left and a document with several properties open to the right." />
+![Obsidian interface, including my file navigation menu open on the left and a document with several properties open to the right.](/blog/obsidian-example-graph-1.png)
 
 Graphs can become very impressive beasts!
 

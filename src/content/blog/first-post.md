@@ -2,7 +2,7 @@
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
 date: "Jul 08 2022"
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "/placeholder/blog-placeholder-3.jpg"
 isHidden: true
 ---
 
