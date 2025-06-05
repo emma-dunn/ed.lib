@@ -24,6 +24,10 @@
            flex flex-col;
   }
 
+  article {
+    @apply p-6 space-y-4;
+  }
+
   h1,
   h2,
   h3,

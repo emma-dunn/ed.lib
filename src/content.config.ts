@@ -3,7 +3,7 @@ import { defineCollection, getCollection, z } from "astro:content";
 
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdoc}" }),
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
@@ -24,7 +24,7 @@ export async function getBlogs() {
 }
 
 const gallery = defineCollection({
-  loader: glob({ base: "./src/content/gallery", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: "./src/content/gallery", pattern: "**/*.{md,mdoc}" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),

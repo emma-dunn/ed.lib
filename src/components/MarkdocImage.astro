@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import Captionable from "./Captionable.astro";
+interface Props {
+  src: ImageMetadata | string;
+  alt: string;
+  caption: string;
+}
+const { src, alt, caption } = Astro.props;
+
+console.log({ caption, src });
+---
+
+<Captionable {caption}>
+  {
+    typeof src === "string" ? (
+      <img src={src} alt={alt} />
+    ) : (
+      <Image src={src} alt={alt} />
+    )
+  }
+</Captionable>
