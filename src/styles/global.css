@@ -11,16 +11,16 @@
  */
 @theme {
   --font-fig: "Figtree", "sans-serif";
-
   --breakpoint-720: 720px;
   --spacing-720: 720px;
   --spacing-main: calc(100% - 2em);
 }
 @layer base {
   body {
-    @apply bg-base-200 text-base-content
+    @apply bg-base-200 text-base-content min-h-screen
            text-xl font-fig
-           text-left wrap-break-word text-wrap;
+           text-left wrap-break-word text-wrap
+           flex flex-col;
   }
 
   h1,
@@ -56,7 +56,7 @@
   }
 
   a {
-    @apply text-success hover:brightness-75 hover:underline underline-offset-4;
+    @apply text-cyan-800 hover:brightness-75 hover:underline underline-offset-4;
   }
 
   textarea {
@@ -97,18 +97,6 @@
     border: none;
     border-top: 1px solid rgb(var(--gray-light));
   }
-  @media (max-width: 720px) {
-    body {
-      font-size: 18px;
-    }
-    main {
-      padding: 1em;
-    }
-  }
-}
-
-.home {
-  @apply w-720 max-w-main mx-auto;
 }
 
 .sr-only {

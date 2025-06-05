@@ -8,9 +8,9 @@ interface Props {
 const { class: classes } = Astro.props;
 ---
 
-<main class:list={["mx-auto w-fit max-w-7xl p-6", classes]}>
-  <Header />
-  <div class="bg-base-100 p-5 rounded-b-2xl rounded-r-2xl">
+<main class:list={["relative mx-auto max-w-7xl", classes]}>
+  <Header class="relative z-0" />
+  <div class="bg-base-100 p-5 rounded-2xl -mt-10 relative z-10">
     <slot />
   </div>
 </main>

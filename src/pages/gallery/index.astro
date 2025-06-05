@@ -6,9 +6,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Page from "../../components/Page.astro";
-import { getBlogs } from "../../content.config";
+import { getGallery } from "../../content.config";
 
-const posts = await getBlogs();
+const gallery = await getGallery();
 ---
 
 <!doctype html>
@@ -19,33 +19,27 @@ const posts = await getBlogs();
   <body>
     <Page class="md:px-6">
       <section>
-        <div class="pb-10">
-          <h2>Latest Posts</h2>
-          <p>Piping hot posts fresh from the press!</p>
+        <div class="pb-4">
+          <h2>Gallery</h2>
         </div>
         <ul
           class="list-none p-0 items-center grid md:grid-cols-2 xl:grid-cols-3 gap-4"
         >
           {
-            posts.map((post) => (
+            gallery.map((item) => (
               <li class="group w-full max-w-720 mb-auto">
                 <a
-                  href={`/blog/${post.id}/`}
+                  href={`/gallery/${item.id}/`}
                   class="hover:no-underline hover:brightness-100"
                 >
                   <img
-                    src={post.data.heroImage}
-                    alt=""
-                    class="aspect-video h-full"
-                    width="720"
+                    src={item.data.src}
+                    alt={item.data.alt}
+                    class="object-cover w-full max-h-64"
                   />
                   <h4 class="pt-2 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl">
-                    {post.data.title}
+                    {item.data.title}
                   </h4>
-                  <FormattedDate
-                    class="text-base-content/90 font-medium"
-                    date={post.data.date}
-                  />
                 </a>
               </li>
             ))
