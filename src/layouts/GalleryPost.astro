@@ -32,22 +32,22 @@ const isLandscape = !isPortrait;
   </head>
 
   <body>
-    <Page class="">
+    <Page class="md:px-6">
       <section
         class:list={[
-          "grid",
+          "grid gap-y-6",
           {
-            "md:grid-flow-col": isPortrait,
+            "md:grid-flow-col md:grid-cols-2": isPortrait,
             "grid-flow-row": isLandscape,
           },
         ]}
       >
-        <div class="p-4">
+        <div>
           <img
             class:list={[
               "object-cover",
               {
-                "max-h-720": isPortrait,
+                "max-h-720 h-full flex grow": isPortrait,
               },
             ]}
             src={src}
@@ -64,8 +64,8 @@ const isLandscape = !isPortrait;
             <h1>
               {title}
             </h1>
-            <p>{description}</p>
-            <div class="py-2">
+            <p class="pb-2 md:pt-2.5 md:pb-3">{description}</p>
+            <div class="">
               {
                 dateCreated && (
                   <div>
@@ -80,7 +80,7 @@ const isLandscape = !isPortrait;
           </div>
           <table
             class:list={[
-              "table w-3/4 h-fit mt-20",
+              "table w-3/4 h-fit",
               {
                 "place-self-end": isLandscape,
                 "self-end": isPortrait,
