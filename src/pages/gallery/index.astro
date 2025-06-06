@@ -6,6 +6,7 @@ import Page from "../../components/Page.astro";
 import { getGallery } from "../../content.config";
 
 const gallery = await getGallery();
+const itemCount = gallery.length;
 ---
 
 <!doctype html>
