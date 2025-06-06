@@ -1,6 +1,6 @@
-# ed.lib
+# emmadunnlib.com
 
-This is the source code for [ed.lib](https://ed.lib), my personal blog and portfolio website. It showcases my work, photography, and professional interests.
+This is the source code for [emmadunnlib.com](https://emmadunnlib.com), my personal blog and portfolio website. It showcases my work, photography, and professional interests.
 
 ## 🛠 Built With
 
