@@ -1,5 +1,4 @@
 import { glob } from "astro/loaders";
-import { readFile } from "fs/promises";
 import sizeOf from "image-size";
 import path from "path";
 import {
@@ -9,6 +8,7 @@ import {
   type CollectionEntry,
 } from "astro:content";
 import { readFileSync } from "fs";
+import type { PrettyDeep } from "./utils";
 
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -45,12 +45,14 @@ const gallery = defineCollection({
   }),
 });
 
-export type GalleryPostProps = CollectionEntry<"gallery"> & {
-  data: {
-    width: number;
-    height: number;
-  };
-};
+export type GalleryPostProps = PrettyDeep<
+  CollectionEntry<"gallery"> & {
+    data: {
+      width: number;
+      height: number;
+    };
+  }
+>;
 export async function getGallery(): Promise<GalleryPostProps[]> {
   const x = (await getCollection("gallery"))
     .filter((item) => !item.data.isHidden)
@@ -61,7 +63,7 @@ export async function getGallery(): Promise<GalleryPostProps[]> {
       const imgPath = path.join("public", item.data.src);
       const raw = readFileSync(imgPath);
       const { width, height } = sizeOf(Buffer.from(raw));
-      console.log({ width, height });
+
       return {
         ...item,
         data: {
