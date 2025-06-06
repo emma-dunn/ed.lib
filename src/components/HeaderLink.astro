@@ -13,7 +13,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
   href={href}
   class:list={[
     className,
-    "relative text-base-content pt-1.5 p-2.5 rounded-t-lg w-32 hover:brightness-100 hover:no-underline text-center",
+    "relative text-base-content pt-1.5 p-2.5 sm:px-12 rounded-t-lg min-w-32 hover:brightness-100 hover:no-underline text-center",
     { "font-bold bg-base-100": isActive, "bg-base-300": !isActive },
   ]}
   {...props}

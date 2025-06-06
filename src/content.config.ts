@@ -1,5 +1,14 @@
 import { glob } from "astro/loaders";
-import { defineCollection, getCollection, z } from "astro:content";
+import { readFile } from "fs/promises";
+import sizeOf from "image-size";
+import path from "path";
+import {
+  defineCollection,
+  getCollection,
+  z,
+  type CollectionEntry,
+} from "astro:content";
+import { readFileSync } from "fs";
 
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -36,12 +45,34 @@ const gallery = defineCollection({
   }),
 });
 
-export async function getGallery() {
-  return (await getCollection("gallery"))
+export type GalleryPostProps = CollectionEntry<"gallery"> & {
+  data: {
+    width: number;
+    height: number;
+  };
+};
+export async function getGallery(): Promise<GalleryPostProps[]> {
+  const x = (await getCollection("gallery"))
     .filter((item) => !item.data.isHidden)
     .sort(
       (a, b) => b.data.dateArchived.valueOf() - a.data.dateArchived.valueOf()
-    );
+    )
+    .map((item) => {
+      const imgPath = path.join("public", item.data.src);
+      const raw = readFileSync(imgPath);
+      const { width, height } = sizeOf(Buffer.from(raw));
+      console.log({ width, height });
+      return {
+        ...item,
+        data: {
+          ...item.data,
+          width,
+          height,
+        },
+      };
+    });
+
+  return x;
 }
 
 export const collections = { blog, gallery };

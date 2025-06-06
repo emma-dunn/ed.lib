@@ -9,6 +9,7 @@ import Page from "../../components/Page.astro";
 import { getGallery } from "../../content.config";
 
 const gallery = await getGallery();
+const itemCount = gallery.length;
 ---
 
 <!doctype html>
@@ -35,7 +36,7 @@ const gallery = await getGallery();
                   <img
                     src={item.data.src}
                     alt={item.data.alt}
-                    class="object-cover w-full max-h-64"
+                    class:list={["object-cover w-full"]}
                   />
                   <h4 class="pt-2 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl">
                     {item.data.title}
