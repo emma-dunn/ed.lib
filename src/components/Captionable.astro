@@ -12,9 +12,7 @@ const { caption } = Astro.props;
   caption ? (
     <figure class="my-2">
       <slot />
-      <figcaption class="text-sm text-center py-4 sm:px-[10%] text-ellipsis">
-        {caption}
-      </figcaption>
+      <figcaption>{caption}</figcaption>
     </figure>
   ) : (
     <slot />
