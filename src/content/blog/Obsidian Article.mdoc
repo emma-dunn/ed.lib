@@ -4,18 +4,20 @@ type: Article
 description: todo
 author:
   - Me
-date: 2025-05-30
+date: "2025-05-30"
 heroImage: /blog/books-1.jpg
 heroAlt: A bookshelf filled with lots of books and papers, some of them divided into shelf organizers. One book spine in the middle reads Let the People Know.
 tags:
   - obsidian
 ---
 
+<figcaption class="text-left py-2 px-5">
 Photo by [Leiada Krözjhen](https://unsplash.com/@leiadakrozjhen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-bookshelf-filled-with-lots-of-books-and-papers-Uc-dksnXntg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+</figcaption>
 
 No other app, tool, or planner has transformed the way I work quite like Obsidian—a powerful personal knowledge base and note-taking application that I rely on daily for a huge variety of tasks.
 
-Whether you're a student, researcher, blogger, programmer, DnD game master, or simply someone who thinks deeply and often, Obsidian has the potential to completely reshape how you capture, connect, and organize your thoughts. In this post, I’ll walk you through the key features that set me on my path of organizational rediscovery so you can decide if Obsidian could also improve your flow... (the answer is yes).
+Whether you're a student, researcher, blogger, programmer, DnD game master, or simply someone who thinks deeply and often, Obsidian has the potential to completely reshape how you capture, connect, and organize your thoughts. In this post, I’ll walk you through the key features that set me on a path of organizational rediscovery so you can decide for yourself if Obsidian is for you.
 
 ## What Makes Obsidian Different?
 
@@ -34,7 +36,7 @@ You can **link notes** together using double brackets: `[[Note Title]]`. Doing s
 
 ---
 
-### Custom Properties and Tags
+### Custom Properties: Tag to Your Heart's Content
 
 {% image
    src="/blog/obsidian_journal.png"
@@ -43,15 +45,11 @@ You can **link notes** together using double brackets: `[[Note Title]]`. Doing s
 
 Beyond folders and links, Obsidian gives you powerful ways to **add structure to your notes**. At the top of any note, you can type `---` to open a **Properties Panel**, where you can define properties using six basic types:
 
-<figure class="mx-auto w-fit">
 <img
+class="mx-auto w-fit"
 src="/blog/property_types.jpg"
 alt="The dialogue menu that allows you to change the type of a property. The property types are text, list, number, checkbox, date, and date and time."
 />
-<figcaption>
-
-</figcaption>
-</figure>
 
 Using these types, you can define all sorts of different information about your note, such as:
 
@@ -66,9 +64,9 @@ This means you’re not limited to organizing using just notes and folders like 
 
 ---
 
-### Graph View
+### Graph View: See Your Connections
 
-Creating links between your notes is made even more worthwhile by **Graph View**, where you can actually see those connections in a visual web. Every note is represented by a **node**, and every link you’ve created becomes a line.
+After you've made some *notes* with *properties* and *links*, you can visualize everything in **Graph View**. Your data is represented as **nodes**, and links between them are [directed edges](https://en.wikipedia.org/wiki/Directed_graph) in the graph.
 
 {% image
    src="/blog/obsidian-example-graph-1.png"
@@ -101,17 +99,24 @@ To add a note to a canvas you simply drag it from your file navigator—it becom
 
 ### Web Clipper: Say Goodbye to Lost Tabs
 
-<figure class="float-left pr-4 md:max-w-1/3 sm:mr-2 max-h-full">
+<p class="md:hidden">
+The feature that truly convinced me that Obsidian was the app for me is the **Web Clipper**. It’s a browser extension that lets you save a webpage or article directly into your vault as a note.
+</p>
+
+<figure class="mx-auto md:float-left md:max-w-1/3 max-h-full w-fit md:mr-6">
 <img
+class="object-cover mx-auto"
 src="/blog/web_clipper.jpg"
 alt="A menu allowing you to edit the properties of a web page before clipping it to your Obsidian vault."
 />
-<figcaption>
+<figcaption class="pb-0">
 The web clipper pop-up that you'll find in your browser extensions.
 </figcaption>
 </figure>
 
+<p class="hidden sm:block">
 The feature that truly convinced me that Obsidian was the app for me is the **Web Clipper**. It’s a browser extension that lets you save a webpage or article directly into your vault as a note.
+</p>
 
 I used to bookmark every interesting article I found with the intention of “coming back to it later”—but let’s be honest, I rarely did. Now, when I find something useful, I clip it straight into my "Saved Links" folder in Obsidian. Each clipping shows up with a title, the page metadata already loaded as properties, all of the images intact, and **the full text of the page.** Then I can tag the content, categorize it, or drop it into a canvas for later use. It's a researcher's dream tool!
 
@@ -125,19 +130,19 @@ This system also makes it easier to revisit ideas I saved weeks or months ago, b
 
 ### Markdown: Simple, Portable, Powerful
 
-The web clipper feature is able to convert web content to Obsidian notes so easily because Obsidian notes are automatically written in **Markdown**, a lightweight text formatting system that is supported by many applications and platforms. GitHub, Discord, and many web development frameworks like Astro all support Markdown text. This means that if you're creating a website with one of these frameworks, you can import your Obsidian notes straight onto your website, and vice versa, and the content will look just like it did when it was written.
+Web Clipper is able to convert web content to Obsidian notes effortlessly because Obsidian notes are written in **Markdown**, a lightweight text formatting system supported by most applications and platforms. GitHub, Discord, and many web development frameworks like Astro all support Markdown text. This means that if you're creating a website with one of these frameworks, you can import your Obsidian notes straight onto your website, and vice versa, and the content will look just like it did where it was written.
 
 <figure class="float-right md:max-w-1/2 sm:ml-4 max-h-full">
 <img
 src="/blog/markdown_cheatsheet.jpg"
 alt="A cheat sheet for the markdown formatting language."
 />
-<figcaption>
+<figcaption class="pb-0">
 This handy cheat sheet shows off some of what you can do with Markdown.
 </figcaption>
 </figure>
 
-Markdown keeps your files clean, portable, and easy to use across the web. Unlike Word documents (which can get bloated with formatting), Markdown notes are just plain text. This makes them future-proof and platform-independent—your work isn’t trapped in a proprietary format.
+Markdown keeps your files clean, portable, and easy to use across the web. Unlike Word documents (which tightly couple your content to a single, proprietary tool), Markdown notes are just plain text. This makes them future-proof and platform-independent—your work isn’t trapped in a specific ecosystem.
 
 Obsidian also has a **live preview** mode, which lets you see your Markdown formatting take effect as you write, without needing to switch between "edit" and "view" modes. This allows for a smooth, distraction-free writing experience where it's easy to envision the finished product.
 
@@ -147,7 +152,7 @@ Obsidian also has a **live preview** mode, which lets you see your Markdown form
 
 ### Extensibility is Key
 
-As amazing as the other features I've mentioned are, Obsidian’s most powerful feature is truly the **community plugin** system. If there’s something about Obsidian you don’t like, chances are you can change it by installing a plugin directly from the settings menu. And if the plugin you need doesn’t exist yet, you are encouraged to build your own and share it with others in the community. This allows you to even further enhance the power of Obsidian's base system.
+Obsidian’s most powerful feature is the **community plugin** system. If there’s something about Obsidian you don’t like, chances are you can change it by installing a plugin directly from the settings menu. And if the plugin you need doesn’t exist yet, you are encouraged to build your own and share it with others in the community. This allows you to even further enhance the power of Obsidian's base system.
 
 This open-ended flexibility is at the heart of why Obsidian exists. Erica Xu, who co-founded Obsidian in 2020, explains how her frustrations with other note-taking tools led to the app’s creation:
 

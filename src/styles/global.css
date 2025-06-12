@@ -26,6 +26,12 @@
 
   article {
     @apply space-y-8;
+    h2 {
+      @apply pb-3;
+    }
+    h3 {
+      @apply pb-5;
+    }
   }
 
   h1,
@@ -100,7 +106,7 @@
     border-top: 1px solid rgb(var(--gray-light));
   }
   figcaption {
-    @apply text-[15px] text-center py-4 sm:px-[10%] text-ellipsis;
+    @apply text-[15px] text-center pt-4 pb-8 p-0 sm:px-[10%] text-ellipsis;
   }
 }
 

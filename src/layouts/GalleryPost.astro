@@ -22,8 +22,19 @@ const {
   height,
 } = Astro.props;
 
-const isPortrait = height >= width;
+const isPortraitWithTolerance = (
+  width: number,
+  height: number,
+  tolerance: number = 0.1
+): boolean => {
+  return width <= height * (1 + tolerance);
+};
+
+// const isPortrait = height >= width;
+const isPortrait = isPortraitWithTolerance(width, height);
 const isLandscape = !isPortrait;
+
+console.log({ isPortrait });
 ---
 
 <html lang="en">
@@ -64,8 +75,12 @@ const isLandscape = !isPortrait;
             <h1 class="text-4xl sm:text-5xl lg :text-4xl">
               {title}
             </h1>
-            <p class="pb-2 md:pt-2.5 md:pb-3">{description}</p>
-            <div class="">
+            <p
+              class:list={["pb-2 md:pt-2.5 md:pb-3", { hidden: !description }]}
+            >
+              {description}
+            </p>
+            <div class:list={[{ "pt-4": !description }]}>
               {
                 dateCreated && (
                   <div>

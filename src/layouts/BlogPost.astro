@@ -30,7 +30,7 @@ const {
 
   <body>
     <Page>
-      <div class="text-center">
+      <div class="text-center pb-1">
         <div class="py-2">
           <FormattedDate date={pubDate} />
           {
@@ -44,7 +44,9 @@ const {
         <h1 class="max-w-[90%] mx-auto">
           {title}
         </h1>
-        <hr />
+        <p>
+          <address class="not-italic">by Emma Dunn</address>
+        </p>
       </div>
       {
         heroImage && (
@@ -53,6 +55,7 @@ const {
           </div>
         )
       }
+
       <slot />
     </Page>
 

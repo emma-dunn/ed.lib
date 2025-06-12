@@ -1,7 +1,7 @@
 ---
 title: "More Coming Soon!"
 description: "Lorem ipsum dolor sit amet"
-date: "May 1 2025"
+date: "2025-01-05"
 heroImage: "/placeholder/blog-placeholder-2.jpg"
 ---
 

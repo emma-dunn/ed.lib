@@ -23,7 +23,7 @@ const itemCount = gallery.length;
         <ul class="list-none p-0 columns-1 md:columns-2 lg:columns-3 gap-4">
           {
             gallery.map((item) => (
-              <li class="group break-inside-avoid mb-6 bg-white pb-1 rounded-xl shadow">
+              <li class="group break-inside-avoid bg-white pt-2.5 px-2.5 rounded-lg shadow">
                 <a
                   href={`/gallery/${item.id}/`}
                   class="w-full hover:no-underline hover:brightness-100 break-inside-avoid"
@@ -31,9 +31,9 @@ const itemCount = gallery.length;
                   <img
                     src={item.data.src}
                     alt={item.data.alt}
-                    class="object-cover w-full rounded-b-none"
+                    class="object-cover w-full rounded"
                   />
-                  <h4 class="pt-2 px-2 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl capitalize">
+                  <h4 class="py-2 px-1 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl capitalize">
                     {item.data.title}
                   </h4>
                 </a>

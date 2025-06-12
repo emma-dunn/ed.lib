@@ -8,7 +8,7 @@ import {
   type CollectionEntry,
 } from "astro:content";
 import { readFileSync } from "fs";
-import type { PrettyDeep } from "./utils";
+import { parseLocalDate, type PrettyDeep } from "./utils";
 
 const blog = defineCollection({
   // Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -18,8 +18,8 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     // Transform string to Date object
-    date: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
+    date: z.string().transform(parseLocalDate),
+    updatedDate: z.string().transform(parseLocalDate).optional(),
     heroImage: z.string().optional(),
     heroAlt: z.string().optional(),
     isHidden: z.boolean().optional(),
@@ -36,9 +36,9 @@ const gallery = defineCollection({
   loader: glob({ base: "./src/content/gallery", pattern: "**/*.{md,mdoc}" }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    dateCreated: z.coerce.date().optional(),
-    dateArchived: z.coerce.date(),
+    description: z.string().optional(),
+    dateCreated: z.string().transform(parseLocalDate).optional(),
+    dateArchived: z.string().transform(parseLocalDate),
     src: z.string(),
     alt: z.string(),
     isHidden: z.boolean().optional(),
