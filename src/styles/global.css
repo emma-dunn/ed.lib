@@ -25,7 +25,7 @@
   }
 
   article {
-    @apply space-y-6;
+    @apply space-y-8;
   }
 
   h1,
@@ -93,17 +93,14 @@
     all: unset;
   }
   blockquote {
-    border-left: 4px solid var(--accent);
-    padding: 0 0 0 20px;
-    margin: 0px;
-    font-size: 1.333em;
+    @apply border-l-4 border-success px-4 py-2 bg-base-200 rounded;
   }
   hr {
     border: none;
     border-top: 1px solid rgb(var(--gray-light));
   }
   figcaption {
-    @apply text-sm text-center py-4 sm:px-[10%] text-ellipsis;
+    @apply text-[15px] text-center py-4 sm:px-[10%] text-ellipsis;
   }
 }
 
