@@ -1,4 +1,5 @@
 ---
+import { Emoji } from "animated-fluent-emojis";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -24,12 +25,23 @@ const latestPhoto = gallery.at(0)!;
   <body>
     <Page class="w-720 max-w-screen sm:max-w-main mx-auto">
       <section class="bg-base-100 rounded-b-lg rounded-r-lg space-y-6">
-        <h1>🐊 Welcome!</h1>
+        <h1>
+          <img
+            class="inline h-18 -translate-y-1 mr-0.5"
+            src="animated_emoji/crocodile.png"
+            alt="🐊"
+          />
+          Welcome!
+        </h1>
         <p>Hi, I'm Emma Dunn and this is my personal website.</p>
         <p>
           I'm a librarian interested in everything information science,
           technology and education. I also have a passion for nature and
-          biology. 🌵
+          biology. <img
+            class="float-right max-h-32 md:max-h-64 md:float-right inline translate-y-4 mr-0.5 mb-2 transition-all duration-500 ease-in-out"
+            src="animated_emoji/parrot.png"
+            alt="🦜"
+          />
         </p>
 
         <p>
