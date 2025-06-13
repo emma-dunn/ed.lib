@@ -15,6 +15,7 @@ const {
   updatedDate,
   heroImage,
   heroAlt,
+  isOneOff,
 } = Astro.props;
 ---
 
@@ -31,27 +32,37 @@ const {
   <body>
     <Page>
       <div class="text-center pb-1">
-        <div class="py-2">
-          <FormattedDate date={pubDate} />
-          {
-            updatedDate && (
-              <div class="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
-              </div>
-            )
-          }
-        </div>
+        {
+          !!!isOneOff && (
+            <div class="py-2">
+              <FormattedDate date={pubDate} />
+              {updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )}
+            </div>
+          )
+        }
         <h1 class="max-w-[90%] mx-auto">
           {title}
         </h1>
-        <p>
-          <address class="not-italic">by Emma Dunn</address>
-        </p>
+        {
+          !!!isOneOff && (
+            <p>
+              <address class="not-italic">by Emma Dunn</address>
+            </p>
+          )
+        }
       </div>
       {
         heroImage && (
           <div class="p-4">
-            <img class="aspect-video w-full" src={heroImage} alt={heroAlt} />
+            <img
+              class="aspect-video w-full object-contain"
+              src={heroImage}
+              alt={heroAlt}
+            />
           </div>
         )
       }

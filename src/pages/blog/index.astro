@@ -31,19 +31,27 @@ const posts = await getBlogs();
               <li class="group w-full max-w-720 mb-auto">
                 <a
                   href={`/blog/${post.id}/`}
-                  class="hover:no-underline hover:brightness-100"
+                  class="hover:no-underline hover:brightness-100 flex flex-col"
                 >
                   <img
                     src={post.data.heroImage}
                     alt=""
-                    class="aspect-video h-full"
+                    class="aspect-video h-full object-contain"
                     width="720"
                   />
-                  <h4 class="pt-2 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl">
+                  <h4
+                    class:list={{
+                      "pt-2 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl": true,
+                      "text-center": !!post.data.isOneOff,
+                    }}
+                  >
                     {post.data.title}
                   </h4>
                   <FormattedDate
-                    class="text-base-content/90 font-medium"
+                    class:list={{
+                      "text-base-content/90 font-medium": true,
+                      invisible: !!post.data.isOneOff,
+                    }}
                     date={post.data.date}
                   />
                 </a>
