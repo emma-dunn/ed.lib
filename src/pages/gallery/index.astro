@@ -4,6 +4,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import Page from "../../components/Page.astro";
 import { getGallery } from "../../content.config";
+import { Image } from "astro:assets";
 
 const gallery = await getGallery();
 const itemCount = gallery.length;
@@ -20,22 +21,24 @@ const itemCount = gallery.length;
         <div class="pb-4">
           <h2>Gallery</h2>
         </div>
-        <ul class="list-none p-0 columns-1 md:columns-2 lg:columns-3 gap-4">
+        <ul
+          class="list-none p-0 columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4"
+        >
           {
             gallery.map((item) => (
-              <li class="group break-inside-avoid bg-white pt-2.5 px-2.5 rounded-lg shadow">
+              <li class="group break-inside-avoid rounded-lg md:rounded-xl overflow-clip shadow hover:brightness-95 transition-all duration-150 ease-in-out">
                 <a
                   href={`/gallery/${item.id}/`}
-                  class="w-full hover:no-underline hover:brightness-100 break-inside-avoid"
+                  class="relative flex w-full hover:no-underline hover:brightness-100 break-inside-avoid"
                 >
                   <img
                     src={item.data.src}
                     alt={item.data.alt}
-                    class="object-cover w-full rounded"
+                    class="object-cover w-full"
                   />
-                  <h4 class="py-2 px-1 text-base-content group-hover:text-success group-hover:brightness-75 sm:text-3xl md:text-2xl capitalize">
+                  <h3 class="sm:opacity-0 group-hover:opacity-100 absolute m-0 w-full bottom-0 left-0 py-4 px-4 bg-gradient-to-t from-black to-transparent text-neutral-100 sm:text-3xl md:text-2xl capitalize transition-all duration-150 ease-in-out">
                     {item.data.title}
-                  </h4>
+                  </h3>
                 </a>
               </li>
             ))

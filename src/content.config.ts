@@ -35,15 +35,17 @@ export async function getBlogs() {
 
 const gallery = defineCollection({
   loader: glob({ base: "./src/content/gallery", pattern: "**/*.{md,mdoc}" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    dateCreated: z.string().transform(parseLocalDate).optional(),
-    dateArchived: z.string().transform(parseLocalDate),
-    src: z.string(),
-    alt: z.string(),
-    isHidden: z.boolean().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string().optional(),
+      dateCreated: z.string().transform(parseLocalDate).optional(),
+      dateArchived: z.string().transform(parseLocalDate),
+      image: image().optional(),
+      src: z.string(),
+      alt: z.string(),
+      isHidden: z.boolean().optional(),
+    }),
 });
 
 export type GalleryPostProps = PrettyDeep<
