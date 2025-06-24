@@ -1,6 +1,6 @@
 ---
 title: Gnocchi
-description: My garter snake Gnocchi. Her cloudy eyes mean that she's about to start a shed.
+description: My garter snake, Gnocchi. You can tell she is about to shed from her cloudy eyes.
 dateArchived: "2025-06-18"
 dateCreated: "2023-011-05"
 src: /gallery/snake-3.jpg
