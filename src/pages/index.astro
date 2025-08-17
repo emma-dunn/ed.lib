@@ -1,5 +1,4 @@
 ---
-import { Emoji } from "animated-fluent-emojis";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -7,6 +6,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Page from "../components/Page.astro";
 import { getCollection } from "astro:content";
 import { getGallery } from "../content.config";
+import avatar from "../images/emma_avatar.png";
+import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -33,15 +34,25 @@ const latestPhoto = gallery.at(0)!;
           />
           Welcome!
         </h1>
-        <p>Hi, I'm Emma Dunn and this is my personal website.</p>
+        <p>Hi, I'm Emma Dunn and this is my personal archive!</p>
         <p>
-          I'm an information professional interested in everything related to
-          data science, technology and education. I also have a passion for
-          nature and biology. <img
-            class="float-right max-h-32 md:max-h-64 md:float-right inline translate-y-4 md:ml-2 mb-2 transition-all duration-500 ease-in-out"
-            src="animated_emoji/parrot.png"
-            alt="🦜"
-          />
+          I'm a librarian interested in technology, education and the natural
+          world.
+
+          <div
+            class="float-right inline md:ml-2 mb-2 transition-all duration-500 ease-in-out bg-white shadow-lg p-2 pb-3 space-y-3 rounded-t-lg"
+          >
+            <img
+              class="aspect-square object-contain h-full max-h-32 md:max-h-64"
+              src={avatar.src}
+              alt="Emma's avatar"
+            />
+            <p
+              class="bg-gradient-to-r from-base-100 to-base-200 rounded-tr-md rounded-bl-md w-fit pl-3 pr-4 py-1 text-base font-bold -rotate-2"
+            >
+              Self portrait
+            </p>
+          </div>
         </p>
 
         <p>
@@ -57,13 +68,9 @@ const latestPhoto = gallery.at(0)!;
         or shoot me a message on
         <span
           ><a href={`https://discord.gg/XFP2RrMQ9X`} target="_blank">Discord</a>
+          so we can connect!
         </span>
-        and subscribe to my
-        <span>
-          <a href="rss.xml" target="_blank">RSS feed</a>
-        </span>
-        so you never miss a post!
       </section>
-    </Page>
-  </body><Footer />
+    </Page><Footer />
+  </body>
 </html>
