@@ -40,18 +40,25 @@ const latestPhoto = gallery.at(0)!;
           world.
 
           <div
-            class="float-right inline md:ml-2 mb-2 transition-all duration-500 ease-in-out bg-white shadow-lg p-2 pb-3 space-y-3 rounded-t-lg"
+            class="md:float-right inline-flex flex-col gap-2 md:translate-x-3 transition-all duration-500 ease-in-out bg-white shadow-lg p-2 pb-3 rounded-lg"
           >
             <img
-              class="aspect-square object-contain h-full max-h-32 md:max-h-64"
+              class="aspect-square object-contain h-full md:max-h-64 rounded"
               src={avatar.src}
               alt="Emma's avatar"
             />
-            <p
-              class="bg-gradient-to-r from-base-100 to-base-200 rounded-tr-md rounded-bl-md w-fit pl-3 pr-4 py-1 text-base font-bold -rotate-2"
-            >
-              Self portrait
-            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-gradient-to-r from-base-100 to-base-200 rounded-tr-md rounded-bl-md w-fit pl-3 pr-4 py-1 text-base font-bold -rotate-2"
+              >
+                #me
+              </span>
+              <span
+                class="bg-gradient-to-r from-base-100 to-base-200 rounded-tr-md rounded-bl-md w-fit pl-3 pr-4 py-1 text-base font-bold -rotate-2"
+              >
+                #illustration
+              </span>
+            </div>
           </div>
         </p>
 
